@@ -3,7 +3,7 @@ import StoreKit
 
 struct PaywallView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: CleanlinkViewModel
+    @EnvironmentObject var viewModel: LinkDiveViewModel
     @ObservedObject private var iapService = IAPService.shared
     @State private var selectedPlan = 1
     @State private var isPurchasing = false
@@ -32,7 +32,7 @@ struct PaywallView: View {
                             .foregroundColor(.yellow)
                             .padding(.bottom, Theme.Spacing.micro)
                         
-                        Text("Unlock Cleanlink Pro")
+                        Text("Unlock LinkDive Pro")
                             .font(Theme.Typography.heroTitle)
                             .multilineTextAlignment(.center)
                         
@@ -106,13 +106,13 @@ struct PaywallView: View {
                     }
                     Text("•").foregroundColor(Theme.Colors.textSecondary)
                     LinkButton(title: "Terms") {
-                        if let url = URL(string: "https://cleanlink.app/terms") {
+                        if let url = URL(string: "https://linkdive.app/terms") {
                             UIApplication.shared.open(url)
                         }
                     }
                     Text("•").foregroundColor(Theme.Colors.textSecondary)
                     LinkButton(title: "Privacy") {
-                        if let url = URL(string: "https://cleanlink.app/privacy") {
+                        if let url = URL(string: "https://linkdive.app/privacy") {
                             UIApplication.shared.open(url)
                         }
                     }

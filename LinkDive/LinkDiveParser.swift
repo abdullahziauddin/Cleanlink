@@ -1,6 +1,6 @@
 import Foundation
 
-public enum CleanlinkPlatform: String, CaseIterable {
+public enum LinkDivePlatform: String, CaseIterable {
     case instagram = "Instagram"
     case tiktok = "TikTok"
     case x = "X (Twitter)"
@@ -34,15 +34,15 @@ public enum CleanlinkPlatform: String, CaseIterable {
     }
 }
 
-public struct CleanlinkParser {
+public struct LinkDiveParser {
     
     /// Identifies the platform for a given URL string.
-    public static func identifyPlatform(for urlString: String) -> CleanlinkPlatform {
+    public static func identifyPlatform(for urlString: String) -> LinkDivePlatform {
         guard let url = URL(string: urlString), let host = url.host?.lowercased() else {
             return .unknown
         }
         
-        for platform in CleanlinkPlatform.allCases {
+        for platform in LinkDivePlatform.allCases {
             if platform.hosts.contains(host) || platform.hosts.contains(where: { host.hasSuffix("." + $0) }) {
                 return platform
             }

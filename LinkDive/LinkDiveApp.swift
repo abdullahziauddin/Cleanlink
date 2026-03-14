@@ -1,8 +1,8 @@
 import SwiftUI
 
 @main
-struct CleanlinkApp: App {
-    @StateObject private var viewModel = CleanlinkViewModel()
+struct LinkDiveApp: App {
+    @StateObject private var viewModel = LinkDiveViewModel()
 
     var body: some Scene {
         WindowGroup {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @EnvironmentObject var viewModel: CleanlinkViewModel
+    @EnvironmentObject var viewModel: LinkDiveViewModel
     
     var body: some View {
         NavigationView {
@@ -78,7 +78,7 @@ struct HistoryRow: View {
                     let impact = UIImpactFeedbackGenerator(style: .light)
                     impact.impactOccurred()
                     
-                    if !CleanlinkViewModel.shared.isPro {
+                    if !LinkDiveViewModel.shared.isPro {
                         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                            let rootVC = windowScene.windows.first?.rootViewController {
                             AdService.shared.incrementCopyCount(from: rootVC)

@@ -12,9 +12,9 @@ class IAPService: ObservableObject {
     @Published var isPro: Bool = false
     
     private let productIDs = [
-        "com.cleanlink.pro.weekly",
-        "com.cleanlink.pro.monthly",
-        "com.cleanlink.pro.lifetime"
+        "com.linkdive.pro.weekly",
+        "com.linkdive.pro.monthly",
+        "com.linkdive.pro.lifetime"
     ]
     
     private var updates: Task<Void, Never>? = nil

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var viewModel: CleanlinkViewModel
+    @EnvironmentObject var viewModel: LinkDiveViewModel
     @State private var showClipboardBadge = false
     
     var body: some View {
@@ -65,7 +65,7 @@ struct HomeView: View {
                 .padding(.top, Theme.Spacing.standard)
                 .animation(.spring(response: 0.3, dampingFraction: 0.7), value: viewModel.cleanUrlText)
             }
-            .navigationTitle("Cleanlink")
+            .navigationTitle("LinkDive")
             .standardBackground()
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                 checkClipboard()
@@ -77,7 +77,7 @@ struct HomeView: View {
     }
     
     private func checkClipboard() {
-        if viewModel.autoCleanEnabled, UIPasteboard.general.hasStrings, let string = UIPasteboard.general.string, CleanlinkParser.containsSupportedLink(text: string) {
+        if viewModel.autoCleanEnabled, UIPasteboard.general.hasStrings, let string = UIPasteboard.general.string, LinkDiveParser.containsSupportedLink(text: string) {
             if viewModel.inputText != string {
                 withAnimation { showClipboardBadge = true }
                 viewModel.inputText = string

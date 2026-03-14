@@ -10,8 +10,8 @@ struct CleanedLink: Identifiable, Codable {
 }
 
 @MainActor
-class CleanlinkViewModel: ObservableObject {
-    static let shared = CleanlinkViewModel()
+class LinkDiveViewModel: ObservableObject {
+    static let shared = LinkDiveViewModel()
     
     @Published var inputText: String = "" {
         didSet {
@@ -65,15 +65,15 @@ class CleanlinkViewModel: ObservableObject {
             return
         }
         
-        let cleanedText = CleanlinkParser.cleanText(text)
-        let containsSupported = CleanlinkParser.containsSupportedLink(text: text)
+        let cleanedText = LinkDiveParser.cleanText(text)
+        let containsSupported = LinkDiveParser.containsSupportedLink(text: text)
         
         if cleanedText != text || containsSupported {
             cleanUrlText = cleanedText
             errorMessage = nil
             
             if saveHistoryEnabled {
-                let platform = CleanlinkParser.identifyPlatform(for: trimmed)
+                let platform = LinkDiveParser.identifyPlatform(for: trimmed)
                 let original = platform != .unknown ? trimmed : "Multiple links / Text cleaned"
                 
                 let entry = CleanedLink(originalURL: original, cleanURL: cleanedText, date: Date())
@@ -127,7 +127,7 @@ class CleanlinkViewModel: ObservableObject {
     func checkClipboardForSupportedLink() {
         guard autoCleanEnabled, UIPasteboard.general.hasStrings, let string = UIPasteboard.general.string else { return }
         
-        if CleanlinkParser.containsSupportedLink(text: string) {
+        if LinkDiveParser.containsSupportedLink(text: string) {
             inputText = string
         }
     }

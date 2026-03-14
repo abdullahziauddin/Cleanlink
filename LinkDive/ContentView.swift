@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = CleanlinkViewModel()
+    @StateObject private var viewModel = LinkDiveViewModel()
     @State private var isSplashing = true
     
     var body: some View {

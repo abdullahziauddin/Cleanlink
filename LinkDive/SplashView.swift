@@ -30,7 +30,7 @@ struct SplashView: View {
                             .foregroundColor(.white)
                     }
                     
-                    Text("Cleanlink")
+                    Text("LinkDive")
                         .font(.system(size: 32, weight: .bold, design: .default))
                         .foregroundColor(Color(hex: "0F172A"))
                     

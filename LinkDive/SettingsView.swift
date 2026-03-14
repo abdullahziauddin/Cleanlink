@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var viewModel: CleanlinkViewModel
+    @EnvironmentObject var viewModel: LinkDiveViewModel
     @State private var isShowingPaywall = false
     
     var body: some View {
@@ -34,11 +34,11 @@ struct SettingsView: View {
                 .listRowBackground(Theme.Colors.surface)
                 
                 Section(header: Text("About")) {
-                    Link(destination: URL(string: "https://cleanlink.app/privacy")!) {
+                    Link(destination: URL(string: "https://linkdive.app/privacy")!) {
                         SettingRow(title: "Privacy Policy", icon: "hand.raised.fill")
                     }
                     
-                    Link(destination: URL(string: "mailto:support@cleanlink.app")!) {
+                    Link(destination: URL(string: "mailto:support@linkdive.app")!) {
                         SettingRow(title: "Contact Support", icon: "envelope.fill")
                     }
                     

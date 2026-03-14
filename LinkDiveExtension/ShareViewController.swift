@@ -30,8 +30,8 @@ class ShareViewController: UIViewController {
                 
                 let originalString = sharedURL.absoluteString
                 
-                if CleanlinkParser.isSupported(urlString: originalString),
-                   let cleanedUrlString = CleanlinkParser.clean(urlString: originalString) {
+                if LinkDiveParser.isSupported(urlString: originalString),
+                   let cleanedUrlString = LinkDiveParser.clean(urlString: originalString) {
                     UIPasteboard.general.string = cleanedUrlString
                     self.showSuccessToast()
                 } else {
@@ -50,8 +50,8 @@ class ShareViewController: UIViewController {
                     return
                 }
                 
-                if CleanlinkParser.containsSupportedLink(text: sharedString) {
-                    let cleanedText = CleanlinkParser.cleanText(sharedString)
+                if LinkDiveParser.containsSupportedLink(text: sharedString) {
+                    let cleanedText = LinkDiveParser.cleanText(sharedString)
                     UIPasteboard.general.string = cleanedText
                     self.showSuccessToast()
                 } else {

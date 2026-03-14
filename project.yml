@@ -1,4 +1,4 @@
-name: Cleanlink
+name: LinkDive
 options:
   bundleIdPrefix: com.yourcompany
 packages:
@@ -6,17 +6,17 @@ packages:
     url: https://github.com/googleads/swift-package-manager-google-mobile-ads.git
     from: 11.0.0
 targets:
-  Cleanlink:
+  LinkDive:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - path: Cleanlink
-      - path: CleanlinkExtension/ShareViewController.swift
+      - path: LinkDive
+      - path: LinkDiveExtension/ShareViewController.swift
         type: file
         optional: true
     info:
-      path: Cleanlink/Info.plist
+      path: LinkDive/Info.plist
       properties:
         GADApplicationIdentifier: "ca-app-pub-3940256099942544~1458002511"
         ITSAppUsesNonExemptEncryption: false
@@ -25,23 +25,23 @@ targets:
       CODE_SIGN_STYLE: Automatic
       CODE_SIGN_IDENTITY: "Apple Development"
       DEVELOPMENT_TEAM: "" # Set your Apple Developer Team ID here
-      PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.Cleanlink
+      PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.LinkDive
     dependencies:
       - package: GoogleMobileAds
-      - target: CleanlinkExtension
+      - target: LinkDiveExtension
         embed: true
-  CleanlinkExtension:
+  LinkDiveExtension:
     type: app-extension
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - path: CleanlinkExtension
+      - path: LinkDiveExtension
         excludes:
           - Info.plist
-      - path: Cleanlink/CleanlinkParser.swift
+      - path: LinkDive/LinkDiveParser.swift
         type: file
     info:
-      path: CleanlinkExtension/Info.plist
+      path: LinkDiveExtension/Info.plist
       properties:
         CFBundleDisplayName: $(PRODUCT_NAME)
         NSExtension:
@@ -63,14 +63,14 @@ targets:
       CODE_SIGN_STYLE: Automatic
       CODE_SIGN_IDENTITY: "Apple Development"
       DEVELOPMENT_TEAM: "" # Set your Apple Developer Team ID here
-      PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.Cleanlink.CleanlinkExtension
+      PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.LinkDive.LinkDiveExtension
       SKIP_INSTALL: YES
       GENERATE_INFOPLIST_FILE: NO
 schemes:
-  CleanlinkApp:
+  LinkDiveApp:
     build:
       targets:
-        Cleanlink: all
+        LinkDive: all
     run:
       config: Debug
     test:

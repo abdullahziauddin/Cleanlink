@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @EnvironmentObject var viewModel: CleanlinkViewModel
+    @EnvironmentObject var viewModel: LinkDiveViewModel
     @State private var currentPage = 0
     let totalPages = 3
     
@@ -278,7 +278,7 @@ struct OnboardingPage3: View {
                     .font(.system(size: 26, weight: .bold))
                     .foregroundColor(Color(hex: "0F172A"))
                 
-                Text("Cleanlink works in the background to detect tracked links you copy and notifies you instantly so you can share without fear.")
+                Text("LinkDive works in the background to detect tracked links you copy and notifies you instantly so you can share without fear.")
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(Color(hex: "64748B"))
                     .multilineTextAlignment(.center)
