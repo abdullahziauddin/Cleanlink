@@ -69,3 +69,6 @@ playground.xcworkspace
 # General
 #
 .DS_Store
+
+# XcodeGen
+*.xcodeproj
