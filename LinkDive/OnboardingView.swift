@@ -219,7 +219,7 @@ struct OnboardingPage2: View {
                 // After Card
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
-                        Text("AFTER CLEANLINK")
+                        Text("AFTER LINKDIVE")
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(Theme.Colors.success)
                         Spacer()
