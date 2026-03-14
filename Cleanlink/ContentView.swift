@@ -1,24 +1,42 @@
-//
-//  ContentView.swift
-//  Cleanlink
-//
-//  Created by Abdullah Ziauddin on 13.03.2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = CleanlinkViewModel()
+    @State private var isSplashing = true
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if isSplashing {
+                SplashView(isSplashing: $isSplashing)
+            } else if !viewModel.hasSeenOnboarding {
+                OnboardingView()
+                    .environmentObject(viewModel)
+            } else {
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Label("Clean", systemImage: "link")
+                        }
+                    
+                    HistoryView()
+                        .tabItem {
+                            Label("History", systemImage: "clock.fill")
+                        }
+                    
+                    SettingsView()
+                        .tabItem {
+                            Label("Settings", systemImage: "gear")
+                        }
+                }
+                .accentColor(Theme.Colors.primary)
+                .environmentObject(viewModel)
+            }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

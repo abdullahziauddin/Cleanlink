@@ -1,0 +1,71 @@
+# Xcode
+#
+# gitignore contributors: scroll down to GitHub and Loader sections to find more etc.
+# Build folders
+#
+build/
+DerivedData/
+
+# Array of app settings
+#
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# Other
+#
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Obj-C/Swift specific
+#
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+#
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Packages.
+# .build/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+# AccuRev
+#
+.accurev/
+
+# Fastlane
+#
+# It is recommended to not store the screenshots in the repo since they can take up a lot of space.
+# fastlane/screenshots
+# fastlane/test_output
+
+# Code Signing
+#
+*.cert
+*.mobileprovision
+
+# Bundle identifier
+#
+# This is used for creating unique bundles, and shouldn't be shared among developers.
+# com.yourcompany.Cleanlink.CleanlinkExtension/Info.plist
+
+# General
+#
+.DS_Store
